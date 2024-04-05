@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <!-- Include Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <!-- Include Bootstrap WYSIWYG -->
+    <script
+        src="https://cdn.rawgit.com/bootstrap-wysiwyg/bootstrap3-wysiwyg/master/dist/bootstrap3-wysihtml5.all.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Include Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- Include Bootstrap WYSIWYG CSS -->
+    <link rel="stylesheet"
+        href="https://cdn.rawgit.com/bootstrap-wysiwyg/bootstrap3-wysiwyg/master/src/bootstrap3-wysihtml5.css">
+
+
+    <link rel="stylesheet" href="blog.css">
+    <script src="/script.js"></script>
+</head>
+
+<style>
+    img {
+
+        width: 100%;
+        border: solid 1px #ccc;
+
+    }
+
+    h1 {
+        text-align: center;
+    }
+</style>
+
+<body>
+ 
+     
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 style="color: #e44545;font-family: Georgia, 'Times New Roman', Times, serif;">All Posts</h1>
+            </div>
+            <div class="col-lg-12">
+                <a href="/" class="btn btn-primary">Go Back</a>
+            </div>
+
+            <% x.forEach((y)=> { %>
+                <div class="col-lg-4 mb-4">
+                    <div class="card" style="border: 1px solid black;">
+                        <h5 class="card-title">
+                            <h1 style="color: #f56e6e;text-align: center;">Title:</h1>
+                           <p style="text-align: center;font-size: 17px;font-weight: bold;"> <%= y.title %></p>
+                        </h5>
+                        <img src="/images/<%= y.Picture %>" class="card-img-top" alt="Image" width="100px"
+                            height="250px">
+                        <div class="card-body">
+                            <h2 style="color: #f56e6e">Content:</h2>
+                            <p class="card-text">
+                                <h4 style="text-align: center;"><%= y.content %></h4>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+        </div>
+    </div>
+
+</body>
+
+</html>
